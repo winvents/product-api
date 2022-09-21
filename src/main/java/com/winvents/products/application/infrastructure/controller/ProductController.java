@@ -1,9 +1,10 @@
 package com.winvents.products.application.infrastructure.controller;
 
+import com.winvents.products.application.infrastructure.dto.ProductDto;
 import com.winvents.products.application.usecase.create.CreateProductUseCase;
 import com.winvents.products.application.usecase.delete.DeleteProductUseCase;
-import com.winvents.products.application.usecase.dto.ProductDto;
 import com.winvents.products.application.usecase.list.ListProductsUseCase;
+import com.winvents.products.application.usecase.search.SearchProductByIdUseCase;
 import com.winvents.products.application.usecase.update.UpdateProductUseCase;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
@@ -23,6 +24,7 @@ public class ProductController {
     private final ListProductsUseCase listProductsUseCase;
     private final DeleteProductUseCase deleteProductUseCase;
     private final UpdateProductUseCase updateProductUseCase;
+    private final SearchProductByIdUseCase searchProductByIdUseCase;
 
 
     @PostMapping
@@ -39,6 +41,15 @@ public class ProductController {
             return new ResponseEntity<>(HttpStatus.NO_CONTENT);
         }
         return new ResponseEntity<>(products, HttpStatus.OK);
+    }
+
+    @GetMapping("/{id}")
+    public ResponseEntity<ProductDto> searchProductById(@PathVariable Long id) {
+        ProductDto product = searchProductByIdUseCase.execute(id);
+        if (product == null) {
+            return new ResponseEntity<>(HttpStatus.NO_CONTENT);
+        }
+        return new ResponseEntity<>(product, HttpStatus.OK);
     }
 
     @PutMapping("/{id}")

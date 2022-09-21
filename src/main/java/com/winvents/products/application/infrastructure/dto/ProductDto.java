@@ -1,4 +1,4 @@
-package com.winvents.products.application.usecase.dto;
+package com.winvents.products.application.infrastructure.dto;
 
 import com.winvents.products.application.domain.Product;
 import lombok.*;

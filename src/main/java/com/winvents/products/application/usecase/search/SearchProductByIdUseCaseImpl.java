@@ -1,33 +1,26 @@
-package com.winvents.products.application.usecase.list;
+package com.winvents.products.application.usecase.search;
 
 import com.winvents.products.application.domain.Product;
 import com.winvents.products.application.infrastructure.dto.ProductDto;
+import com.winvents.products.application.infrastructure.exception.DatabaseFieldException;
 import com.winvents.products.application.infrastructure.repository.ProductRepository;
 import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import java.util.List;
-
 @Service
-public class ListProductsUseCaseImpl implements ListProductsUseCase {
+public class SearchProductByIdUseCaseImpl implements SearchProductByIdUseCase {
 
     @Autowired
     private ProductRepository productRepository;
 
     @Override
-    public List<ProductDto> execute() {
+    public ProductDto execute(Long productId) {
 
-        List<Product> products = productRepository.findAll();
-
+        Product product = productRepository.findById(productId).orElseThrow(() -> new DatabaseFieldException("id", "not found"));
         ModelMapper modelMapper = new ModelMapper();
-
-        List<ProductDto> productsDto = products
-                .stream()
-                .map(product -> modelMapper.map(product, ProductDto.class))
-                .toList();
-
-        return productsDto;
+        ProductDto productDto = modelMapper.map(product, ProductDto.class);
+        return productDto;
 
     }
 }

@@ -1,9 +1,9 @@
 package com.winvents.products.application.usecase.update;
 
 import com.winvents.products.application.domain.Product;
+import com.winvents.products.application.infrastructure.dto.ProductDto;
 import com.winvents.products.application.infrastructure.exception.DatabaseFieldException;
 import com.winvents.products.application.infrastructure.repository.ProductRepository;
-import com.winvents.products.application.usecase.dto.ProductDto;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 

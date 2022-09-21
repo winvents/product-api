@@ -1,6 +1,6 @@
 package com.winvents.products.application.usecase.create;
 
-import com.winvents.products.application.usecase.dto.ProductDto;
+import com.winvents.products.application.infrastructure.dto.ProductDto;
 
 public interface CreateProductUseCase {
 
