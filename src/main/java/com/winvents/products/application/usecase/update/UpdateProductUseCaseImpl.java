@@ -3,6 +3,7 @@ package com.winvents.products.application.usecase.update;
 import com.winvents.products.application.domain.Product;
 import com.winvents.products.application.infrastructure.dto.ProductDto;
 import com.winvents.products.application.infrastructure.exception.DatabaseFieldException;
+import com.winvents.products.application.infrastructure.repository.CathegoryRepository;
 import com.winvents.products.application.infrastructure.repository.ProductRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
@@ -12,6 +13,7 @@ import org.springframework.stereotype.Service;
 public class UpdateProductUseCaseImpl implements UpdateProductUseCase {
 
     private final ProductRepository productRepository;
+    private final CathegoryRepository cathegoryRepository;
 
     @Override
     public ProductDto execute(Long productId, ProductDto form) {
@@ -25,6 +27,7 @@ public class UpdateProductUseCaseImpl implements UpdateProductUseCase {
         existingProduct.setName(form.getName());
         existingProduct.setPrice(form.getPrice());
         existingProduct.setAmountAvailable(form.getAmountAvailable());
+        existingProduct.setCathegory(cathegoryRepository.findById(form.getCathegoryId()).orElseThrow(() -> new DatabaseFieldException("cathegory", "not found")));
         return existingProduct;
     }
 
