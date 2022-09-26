@@ -5,11 +5,14 @@
 * *Graduação:* Sistemas de Informação
 * *Ano:* 2022
 
+
 | Autor               | RM                                                |
 | ----------------- | ---------------------------------------------------------------- |
 | Isabela Caovila Baldim        | 84141 |
+| João Vitor Mendes Maria       | 85041 |
+| Jonathan Rodrigues Gonçalves  | 85312 |
+| Lucas Remedi Markarian Pavão  | 84451 |
 | Matheus Nathan Modanez        | 86065 |
-
 
 ## 👨🏻‍💻 O Projeto
 Nossa aplicação se trata de um CRUD funcional desenvolvido seguindo os princípios de Clean Architecture e Design Patterns, em especial, o padrão Command. É possível criar, editar e deletar um produto. Em docs, você pode encontrar a collection com o modelo de requisições do postman. 
