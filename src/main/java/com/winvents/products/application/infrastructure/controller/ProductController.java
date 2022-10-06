@@ -1,11 +1,11 @@
 package com.winvents.products.application.infrastructure.controller;
 
 import com.winvents.products.application.infrastructure.dto.ProductDto;
-import com.winvents.products.application.usecase.create.CreateProductUseCase;
-import com.winvents.products.application.usecase.delete.DeleteProductUseCase;
-import com.winvents.products.application.usecase.list.ListProductsUseCase;
-import com.winvents.products.application.usecase.search.SearchProductByIdUseCase;
-import com.winvents.products.application.usecase.update.UpdateProductUseCase;
+import com.winvents.products.application.usecase.product.create.CreateProductUseCase;
+import com.winvents.products.application.usecase.product.delete.DeleteProductUseCase;
+import com.winvents.products.application.usecase.product.list.ListProductsUseCase;
+import com.winvents.products.application.usecase.product.search.SearchProductByIdUseCase;
+import com.winvents.products.application.usecase.product.update.UpdateProductUseCase;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -18,6 +18,7 @@ import java.util.List;
 @RestController
 @RequiredArgsConstructor
 @RequestMapping("/produtos")
+@CrossOrigin
 public class ProductController {
 
     private final CreateProductUseCase createProductUseCase;

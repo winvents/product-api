@@ -24,6 +24,8 @@ public class Product {
 
     private int amountAvailable;
 
+    private String description;
+
     @ManyToOne
     private Cathegory cathegory;
 

@@ -1,4 +1,4 @@
-package com.winvents.products.application.usecase.delete;
+package com.winvents.products.application.usecase.product.delete;
 
 import com.winvents.products.application.domain.Product;
 import com.winvents.products.application.infrastructure.exception.DatabaseFieldException;

@@ -1,4 +1,4 @@
-package com.winvents.products.application.usecase.update;
+package com.winvents.products.application.usecase.product.update;
 
 import com.winvents.products.application.infrastructure.dto.ProductDto;
 

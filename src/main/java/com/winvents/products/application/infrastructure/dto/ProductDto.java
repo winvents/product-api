@@ -2,9 +2,9 @@ package com.winvents.products.application.infrastructure.dto;
 
 import com.winvents.products.application.domain.Cathegory;
 import com.winvents.products.application.domain.Product;
-import javax.validation.constraints.NotNull;
 import lombok.*;
 
+import javax.validation.constraints.NotNull;
 import java.math.BigDecimal;
 
 @Getter
@@ -20,6 +20,9 @@ public class ProductDto {
     private BigDecimal price;
     @NotNull
     private int amountAvailable;
+
+    private String description;
+
     @NotNull
     private Long cathegoryId;
 
@@ -30,6 +33,7 @@ public class ProductDto {
                 .price(price)
                 .amountAvailable(amountAvailable)
                 .cathegory(cathegory)
+                .description(description)
                 .build();
     }
 }

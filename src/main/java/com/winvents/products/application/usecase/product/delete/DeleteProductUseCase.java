@@ -1,4 +1,4 @@
-package com.winvents.products.application.usecase.delete;
+package com.winvents.products.application.usecase.product.delete;
 
 public interface DeleteProductUseCase {
 

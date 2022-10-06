@@ -1,4 +1,4 @@
-package com.winvents.products.application.usecase.list;
+package com.winvents.products.application.usecase.product.list;
 
 import com.winvents.products.application.domain.Product;
 import com.winvents.products.application.infrastructure.dto.ProductDto;
